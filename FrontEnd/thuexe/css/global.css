@@ -1,0 +1,51 @@
+.d-flex {
+    display: flex;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+.radius {
+    border-radius: 5px;
+}
+
+.inline {
+    float: left;
+}
+
+.padding85 {
+    padding: 0px 85px;
+}
+
+.block {
+    display: block;
+}
+
+.no-margin {
+    margin: 0px 0px;
+}
+
+.margin-top15 {
+    margin-top: 15px;
+}
+
+.padding-top15 {
+    padding-top: 15px;
+}
+
+.cangiua {
+    margin: 0px auto;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.no-padding {
+    padding: 0px;
+}
+
+.no-color {
+    color: none;
+}

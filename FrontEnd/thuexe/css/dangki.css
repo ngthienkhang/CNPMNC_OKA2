@@ -1,0 +1,13 @@
+.list-unstyled li a {
+    color: rgb(41, 37, 37);
+}
+
+.list-unstyled li a:hover {
+    text-decoration: none;
+    color: black;
+}
+
+.footer-copyright {
+    background-color: rgb(41, 37, 37);
+    color: gray;
+}
