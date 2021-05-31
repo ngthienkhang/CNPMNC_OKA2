@@ -11,6 +11,8 @@ db.once('open',() => console.log('Connected to Database'))
 
 app.use(express.json())
 
+app.use("/images", express.static("images"));
+
 const KhuyenMaiRouter = require('./routes/KhuyenMaiRoute')
 app.use('/khuyenmai',KhuyenMaiRouter)
 
