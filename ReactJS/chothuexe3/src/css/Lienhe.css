@@ -1,0 +1,148 @@
+body {
+    font-family: "PT Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    background-color: #242424;
+  }
+  
+  .container {
+    display: flex;
+    max-width: 1500px;
+  }
+  
+  #header {
+    background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
+    padding-top: 27px;
+    color: #fff;
+  }
+  
+  .logo {
+    padding: 6px 20px;
+    display: block;
+    text-decoration: none;
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  ul#main-menu li a {
+    padding: 10px 20px;
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    font-size: 23px;
+  }
+  
+  ul#main-menu li:hover {
+    border-bottom: solid 5px #fff;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  a button {
+    display: block;
+    text-align: center;
+    margin: 2rem auto;
+    border-radius: 4px;
+    font-size: 1.5rem;
+    padding: 0px 25px;
+    height: 80%;
+    background-color: transparent;
+    color: #fff;
+    margin: 0 10px;
+    border: 1px solid #fff;
+    transition: all 0.3s ease-out;
+  }
+  
+  a button:hover {
+    background: #fff;
+    color: #242424;
+    transition: 250ms;
+  }
+  
+  /* end header */
+.lienhe-wrapper{
+    color:#eee; 
+    text-align:center;
+}
+
+.lienhe-wrapper p{
+    width:50%;
+    margin: 0 auto;
+    padding: 40px;
+    font-weight: bold;
+    line-height: 2;
+}
+
+.left{
+    width: 50%;
+    line-height: 2.5;
+}
+
+.right{
+    width: 50%;
+}
+
+.lienhe{
+    color: #eee;
+    
+}
+
+.vitri{
+    color: #eee;
+}
+
+/* end lien he */
+  footer {
+    font-family: "PT Sans", sans-serif;
+    color: #fff;
+    background-color: #1b1a1a;
+  }
+  
+  .footer-link-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .footer-link-items ul li {
+    text-align: center;
+  }
+  
+  .footer-link-items ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .footer-link-items ul li a:hover {
+    font-size: 17px;
+  }
+  
+  .footer-items {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .chungnhan img {
+    width: 120px;
+    height: 40px;
+  }
+  
+  /* end footer */
+  
+  .phancach {
+    background-color: #eee;
+  }
+  
+  .phancach2 {
+    background-color: #eee;
+    width: 70%;
+  }
+  
+  .phancach1 {
+    background-color: #eee;
+    height: 3px;
+    width: 10%;
+  }
+  /* phân cách hr */
+  

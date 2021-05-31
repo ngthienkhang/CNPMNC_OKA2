@@ -1,0 +1,246 @@
+body {
+  font-family: "PT Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  background-color: #242424;
+}
+
+.container {
+  display: flex;
+  max-width: 1500px;
+}
+
+#header {
+  background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
+  padding-top: 27px;
+  color: #fff;
+}
+
+.logo {
+  padding: 6px 20px;
+  display: block;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+ul#main-menu li a {
+  padding: 10px 20px;
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  font-size: 23px;
+}
+
+ul#main-menu li:hover {
+  border-bottom: solid 5px #fff;
+  transition: all 0.2s ease-in-out;
+}
+
+a button {
+  display: block;
+  text-align: center;
+  margin: 2rem auto;
+  border-radius: 4px;
+  font-size: 1.5rem;
+  padding: 0px 25px;
+  height: 80%;
+  background-color: transparent;
+  color: #fff;
+  margin: 0 10px;
+  border: 1px solid #fff;
+  transition: all 0.3s ease-out;
+}
+
+a button:hover {
+  background: #fff;
+  color: #242424;
+  transition: 250ms;
+}
+
+/* end header */
+
+.sidebar {
+  width: 30%;
+  color: #eee;
+  margin-top: 50px;
+  border-right: 1px solid rgb(66, 66, 66);
+}
+
+.filter-options-items{
+  margin-top: 80px;
+}
+
+.filter-options-title h4 {
+  display: block;
+  padding: 10px;
+  padding-top:0px;
+  color: #eee;
+  font-weight: bold;
+  position: relative;
+  border-bottom: 1px solid #504f4f;
+  border-left: 5px solid #eee;
+}
+
+.filter-options-title h4:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  border-bottom: 1px solid #eee;
+  transition: 0.25s;
+}
+
+.filter-options-title h4:hover::before {
+    width: 100%;
+}
+
+.loc{
+  width:100px;
+  position: relative;
+  left: 220px;
+  font-size:18px;
+}
+
+.loc:hover{
+  background-color: black;
+  color: #eee;
+}
+/* end listcars sidebar */
+.main {
+  width: 70%;
+  margin-top:50px;
+}
+
+.listcars{
+  padding: 50px;
+  padding-top:0px;
+}
+
+.listcars-items-title{
+  font-size:18px;
+  font-weight:bold;
+  background-color: #eee;
+  color: black;
+  width: 200px;
+  text-align: center;
+  padding: 20px 5px;
+  margin-left: 30px;
+  border-radius: 1px;
+}
+
+.listcars-items-title h4{
+  margin: 0px;
+  font-weight: bold;
+}
+
+.listcars-items-content{
+  border-top: 5px solid #eee;
+  border-radius:1px;
+}
+
+.listcars-items-content ul{
+  margin:0px;
+  padding:0px;
+  padding-top: 50px;
+}
+
+.listcars-items-content ul li {
+  display: block;
+    border-radius: 2px;
+    border: 1px solid #eee;
+    width: 40%;
+    min-height: auto;
+    background-color: #eee;
+    float: left;
+    margin-left: 52px;
+    margin-bottom: 50px;
+}
+
+.listcars-items-content ul li a img{
+  min-height:60%;
+  width:100%;
+}
+
+.car-card-price {
+  color: black;
+}
+
+.listcars-items-content ul li a{
+  text-decoration: none;
+  color: black;
+}
+
+.car-card-details-wrapper{
+  text-align: center;
+  padding-top:20px;
+}
+
+.car-card-details h3{
+  font-family: 'Open Sans', sans-serif;
+    font-size: 2.4rem;
+    line-height: 2.8rem;
+    font-weight: 700;
+    -webkit-font-smoothing: antialiased;
+    margin-top: .5rem;
+    margin-bottom: 0;
+    color: black;
+}
+
+/* end listcars main*/
+footer {
+  font-family: "PT Sans", sans-serif;
+  color: #fff;
+  background-color: #1b1a1a;
+}
+
+.footer-link-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.footer-link-items ul li {
+  text-align: center;
+}
+
+.footer-link-items ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-link-items ul li a:hover {
+  font-size: 17px;
+}
+
+.footer-items {
+  display: flex;
+  justify-content: space-around;
+}
+
+.chungnhan img {
+  width: 120px;
+  height: 40px;
+}
+
+/* end footer */
+
+.phancach {
+  background-color: #eee;
+}
+
+.phancach2 {
+  background-color: #eee;
+  width: 70%;
+}
+
+.phancach1 {
+  background-color: #eee;
+  height: 3px;
+  width: 10%;
+}
+/* phân cách hr */
