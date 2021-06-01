@@ -13,12 +13,20 @@ const taixeSchema = new mongoose.Schema({
         type: String,
         require: true
     },
+    avatar: {
+        type: String,
+        require: true
+    },
     SDT:{
         type: Number,
         require: true
     },
     CMND:{
         type: Number,
+        require: true
+    },
+    tinhTrang:{
+        type: String,
         require: true
     },
 })

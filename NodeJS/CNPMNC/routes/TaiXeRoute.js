@@ -24,8 +24,10 @@ router.post('/', async (req,res) => {
         _id: uuid.v4(),
         IDTaiKhoan: req.body.IDTaiKhoan,
         tenTaiXe: req.body.tenTaiXe,
+        avatar: req.body.avatar,
         SDT: req.body.SDT,
         CMND: req.body.CMND,
+        tinhTrang: req.body.tinhTrang,
     })
     try {
         const newTaiXe = await taixe.save()
@@ -58,11 +60,17 @@ router.patch('/:id',getTaiXe, async (req,res) => {
     if(req.body.tenTaiXe != null){
         res.taixe.tenTaiXe = req.body.tenTaiXe      
     }
+    if(req.body.avatar != null){
+        res.taixe.avatar = req.body.avatar      
+    }
     if(req.body.SDT != null){
         res.taixe.SDT = req.body.SDT       
     }
     if(req.body.CMND != null){
         res.taixe.CMND = req.body.CMND       
+    }
+    if(req.body.tinhTrang != null){
+        res.taixe.tinhTrang = req.body.tinhTrang      
     }
     try {
         const updatedtaixe = await res.taixe.save()

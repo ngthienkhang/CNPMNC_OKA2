@@ -82,7 +82,7 @@ router.get('/:id',getXe,async (req,res) => {
 })
 
 //Sua theo id
-router.patch('/:id',getXe, async (req,res) => {
+router.patch('/:id',upload.single("hinhAnh"),getXe, async (req,res) => {
     if(req.body.TenXe != null){
         res.xe.TenXe = req.body.TenXe       
     }
@@ -94,6 +94,9 @@ router.patch('/:id',getXe, async (req,res) => {
     }
     if(req.body.IDLoaiXe != null){
         res.xe.IDLoaiXe = req.body.IDLoaiXe       
+    }
+    if( req.file){
+        res.xe.hinhAnh =  req.file ? req.file.filename : ""
     }
     if(req.body.BienSo != null){
         res.xe.Gia = req.body.Gia       
