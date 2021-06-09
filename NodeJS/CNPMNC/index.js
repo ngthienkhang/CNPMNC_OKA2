@@ -2,6 +2,12 @@ require('dotenv').config()
 
 const express = require('express')
 const app = express()
+const jwt = require('jsonwebtoken')
+
+app.set('view-engine', 'ejs')
+app.use(express.urlencoded({ extended: false }))
+
+app.use(express.json())
 
 const mongoose = require('mongoose')
 mongoose.connect(process.env.DATABASE_URL, {useNewUrlParser: true, useUnifiedTopology: true},);

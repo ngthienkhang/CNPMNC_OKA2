@@ -2,6 +2,10 @@ const express = require('express')
 const router = express.Router()
 const TaiKhoan = require('../models/TaiKhoanModel')
 const uuid = require("uuid");
+const bcrypt = require ('bcrypt')
+const jwt = require('jsonwebtoken')
+const config = require("../config/auth.config");
+const singupChecker = require("../middlewares/verifySignUp");
 
 //Lấy ID
 async function getTaiKhoan(req,res,next){
@@ -9,7 +13,7 @@ async function getTaiKhoan(req,res,next){
     try {
         taikhoan = await TaiKhoan.findById(req.params.id)
         if(taikhoan == null){
-            return res.status(404).json({message:'Cannot find xe'})
+            return res.status(404).json({message:'Cannot find taikhoan'})
         }
     } catch (err) {
         res.status(500).json({message: err.message})
@@ -19,11 +23,12 @@ async function getTaiKhoan(req,res,next){
 }
 
 //Tạo
-router.post('/', async (req,res) => {
+router.post('/',singupChecker, async (req,res) => {
+    const hashMatKhau = await bcrypt.hash(req.body.matKhau,5)
     const taikhoan = new TaiKhoan({
         _id: uuid.v4(),
         tenDangNhap: req.body.tenDangNhap,
-        matKhau: req.body.matKhau,
+        matKhau: hashMatKhau,
         avatar: req.body.avatar,
         email: req.body.email,
         sdt: req.body.sdt,
@@ -37,6 +42,45 @@ router.post('/', async (req,res) => {
         res.status(400).json({message: err.message})
     }
 })
+
+//Login
+router.post('/login', (req,res) => {
+    
+    TaiKhoan.findOne({
+        tenDangNhap: req.body.tenDangNhap
+        })
+    .populate( "-__v")
+    .exec((err, taikhoan) => {
+    if (err) {
+        res.status(500).send({ message: err });
+        return;
+    }
+    if (!taikhoan) {
+        return res.status(404).send({ message: "User Not found." });
+    }
+    var passwordIsValid = bcrypt.compareSync(
+        req.body.matKhau,
+        taikhoan.matKhau
+        );
+    if (!passwordIsValid) {
+        return res.status(401).send({
+        accessToken: null,
+        message: "Invalid Password!"
+        });
+    }
+    var token = jwt.sign({ id: taikhoan.id }, config.secret, {
+        expiresIn: 86400 // 24 hours
+    });
+    res.status(200).send({
+        id: taikhoan._id,
+        tenDangNhap: taikhoan.tenDangNhap,
+        email: taikhoan.email,
+        maQuyen: taikhoan.maQuyen,
+        accessToken: token
+        });
+    });
+})
+
 
 //Xem all
 router.get('/', async (req,res) => {
@@ -58,12 +102,13 @@ router.get('/:id',getTaiKhoan,async (req,res) => {
 })
 
 //Sua theo id
-router.patch('/:id',getTaiKhoan, async (req,res) => {
+router.patch('/:id',getTaiKhoan,singupChecker, async (req,res) => {
+    const hashMatKhau = await bcrypt.hash(req.body.matKhau,5)
     if(req.body.tenDangNhap != null){
         res.taikhoan.tenDangNhap = req.body.tenDangNhap       
     }
     if(req.body.matKhau != null){
-        res.taikhoan.matKhau = req.body.matKhau      
+        res.taikhoan.matKhau = hashMatKhau     
     }
     if(req.body.sdt != null){
         res.taikhoan.sdt = req.body.sdt       
