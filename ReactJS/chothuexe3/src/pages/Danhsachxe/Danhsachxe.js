@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import CarItemsContent from '../../components/CarItemsContent';
-import axios from 'axios';
+import DetailXe from '../../components/DetailXe';
+import callApi from '../../utils/apiCaller';
+
 
 class Danhsachxe extends Component {
   constructor(props) {
@@ -13,24 +15,14 @@ class Danhsachxe extends Component {
   }
 
     componentDidMount(){
-      console.log("componentDidMount")
-      axios({
-        method: 'GET',
-        url: 'http://localhost:3500/xe',
-        data: null
-      }).then(res => {
-        console.log(res);
+      callApi('Xe', 'GET', null).then(res =>{
         this.setState({
-          Xe: res.data
+          Xe :res.data
         })
-
-      }).catch(err => {
-        console.log(err);
       });
     }
 
     render() {
-      console.log('render');
       var { Xe }= this.state;
 
         return (
@@ -108,17 +100,19 @@ class Danhsachxe extends Component {
     showXe(Xe){
         var result = null;
         if(Xe.length > 0){
-                result = Xe.map((Xe,index) =>{
+                result = Xe.map((Xe,index,match) =>{
                     return (
                         <CarItemsContent
                             key={index}
                             Xe={Xe}
                             index={index}  
+                            match={match}
                         />
                     );
                 })
         }
         return result
+        
     }
 }
 

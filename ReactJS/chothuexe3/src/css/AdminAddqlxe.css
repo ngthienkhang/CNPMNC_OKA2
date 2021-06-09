@@ -1,0 +1,46 @@
+.main-addxe {
+    width: 70%;
+    margin: 100px auto;
+    color: #eee;
+  }
+
+  .addxe-items{
+    width: 60%;
+    margin: 0 auto;
+    padding: 10px 30px;
+  }
+
+  .addxe-items input{
+      width: 90%;
+  }
+
+  .addxe-items-checkbox{
+    width: 60%;
+    margin: 0 auto;
+    padding: 10px 30px;
+  }
+
+  .addxe-items-checkbox input{
+      width: 20px;
+      margin-right: 5px;
+  }
+
+  .add-car{
+    position: absolute;
+    right: 500px;
+    margin-top: 30px;
+    padding: 10px 30px;
+  }
+
+  .back-car{
+    position: absolute;
+    left: 500px;
+    margin-top: 30px;
+    padding: 10px 30px;
+  }
+  .main-addxe button{
+      width: 150px;
+  }
+
+  /* end main  */
+/* end admin */

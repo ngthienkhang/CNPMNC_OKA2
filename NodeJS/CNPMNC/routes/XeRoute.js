@@ -42,7 +42,6 @@ async function getXe(req,res,next){
 
 //Tạo
 router.post('/', upload.single("hinhAnh"), async (req,res) => {
-
     const xe = new Xe({
         _id: uuid.v4(),
         TenXe: req.body.TenXe,
@@ -64,10 +63,6 @@ router.post('/', upload.single("hinhAnh"), async (req,res) => {
 
 //Xem all
 router.get('/', async (req,res) => {
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
-    res.setHeader('Access-Control-Allow-Credentials', true);
     try {
         const xes = await Xe.find()
         res.json(xes)

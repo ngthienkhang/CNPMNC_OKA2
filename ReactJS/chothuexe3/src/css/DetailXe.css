@@ -1,0 +1,108 @@
+.sidebar {
+    width: 40%;
+    color: #eee;
+    border-right: 1px solid rgb(66, 66, 66);
+    padding-right: 10px;
+}
+
+.sidebar-image img {
+    margin-top: 10px;
+    width: 100%;
+    height: 300px;
+    border-radius: 2px;
+}
+
+.sidebar-item {
+    margin-top:20px;
+    padding: 30px 20px;
+    border-radius:2px;
+}
+
+.form-btn{
+    margin-top:20px;
+}
+
+.form-btn button {
+    color: #fff;
+    background-color: #f23e3e;
+    font-weight: 400;
+    height: 50px;
+    font-size: 14px;
+    border: none;
+    width: 100%;
+    border-radius: .25rem;
+    text-transform: uppercase;
+    -webkit-transition: 0.2s all;
+    transition: 0.2s all;
+}
+
+.form-btn button:hover{
+    background-color: #df1010;
+}
+
+/* end sidebar */
+.main {
+    margin-top: 10px;
+    width: 60%;
+    margin-left: 10px;
+    color: #eee;
+}
+
+.main-title h1{
+    color: #00a550;
+    font-weight:bold;
+    font-family: "Fantasy";
+}
+
+.main-price{
+    padding: 40px 10px;
+    background-color: rgb(105, 103, 103);
+    border-radius:2px;
+}
+
+.main-price h3{
+    font-weight:bold;
+    text-align: center;
+}
+
+.detailxe{
+    margin: 50px 0px;
+
+}
+
+.group{
+    padding: 10px 20px;
+    background-color:rgb(105, 103, 103);
+}
+
+table{
+    max-width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0px;
+    width: 100% !important;
+    
+}
+
+tr{
+    border-bottom: 0px;
+    
+}
+
+td{
+    padding: 10px 15px;
+}
+
+tr:nth-child(2n){
+    background-color: rgb(78, 76, 76);
+}
+
+td:first-child{
+    width: 220px;
+    vertical-align: top;
+    color: rgb(79, 79, 79);
+    font-size: 13px;
+    font-weight: 500;
+    background: rgb(190, 190, 190);
+}
+/* end main */
+/* end chi tiet xe */

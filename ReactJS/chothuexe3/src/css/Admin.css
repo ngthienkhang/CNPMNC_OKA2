@@ -1,0 +1,112 @@
+.sidebar-admin {
+    width: 30%;
+    color: #eee;
+    margin-top: 50px;
+    border-right: 1px solid rgb(66, 66, 66);
+  }
+  
+  .filter-options-items {
+    margin-top: 80px;
+  }
+  
+  .filter-options-title a {
+    text-decoration: none;
+  }
+  
+  .filter-options-title h4 {
+    position: absolute;
+    display: block;
+    padding: 20px;
+    color: #eee;
+    font-weight: bold;
+    position: relative;
+    border-bottom: 1px solid #504f4f;
+    border-left: 5px solid #eee;
+    margin-bottom: 0px;
+  }
+  
+  .filter-options-title h4:hover {
+    color: black;
+  }
+  
+  .filter-options-title h4:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: #eee;
+    color: black;
+    transition: 0.25s;
+    z-index: -1;
+  }
+  
+  .filter-options-title h4:hover:before {
+    width: 100%;
+  }
+  /* end sidebar  */
+  .main-admin {
+    width: 70%;
+    margin-top: 8px;
+    color: #eee;
+  }
+  
+  .qlxe-main-admin {
+    padding: 60px;
+  }
+  
+  .qlxe-title {
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #eee;
+    color: black;
+    width: 200px;
+    text-align: center;
+    padding: 20px 5px;
+    margin-left: 30px;
+    border-radius: 1px;
+    margin: 0px;
+    margin-left: 30px;
+  }
+  
+  .qlxe-main-admin .add-car{
+    position: absolute;
+    right:150px;
+    margin-top:30px;
+    padding:10px 30px;
+  }
+  
+  table {
+    width: 100%;
+  }
+  
+  .qlxe-body table thead tr{
+    border-bottom: 3px solid #eee;
+  }
+  
+  .qlxe-body table thead tr th{
+    padding: 10px 20px;
+    text-align: center;
+  }
+  
+  .qlxe-body {
+    border-top: 5px solid #eee;
+    border-radius: 1px; 
+    
+  }
+  
+  .qlxe-body table tbody tr{
+    border-bottom: 1px solid #eee;
+  }
+  
+  .qlxe-body table tbody tr td{
+    padding: 10px 20px;
+    text-align: center;
+  }
+
+  .qlxe-body table tbody tr td button{
+    margin-right: 5px;
+  }
+  /* end main  */
+  /* end admin */

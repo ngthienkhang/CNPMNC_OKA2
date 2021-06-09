@@ -40,6 +40,10 @@ router.post('/', async (req,res) => {
 
 //Xem all
 router.get('/', async (req,res) => {
+    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+    res.setHeader('Access-Control-Allow-Credentials', true);
     try {
         const taikhoans = await TaiKhoan.find()
         res.json(taikhoans)
