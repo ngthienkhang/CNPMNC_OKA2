@@ -50,9 +50,10 @@ router.post('/', upload.single("hinhAnh"), async (req,res) => {
         IDHangXe: req.body.IDHangXe,
         IDLoaiXe: req.body.IDLoaiXe,
         hinhAnh: req.file ? req.file.filename : "",
-        BienSo: req.body.Gia,
+        BienSo: req.body.BienSo,
         Gia: req.body.Gia,
-        TinhTrang: req.body.TinhTrang,
+        TinhNang: req.body.TinhNang,
+        TheChap: req.body.TheChap,
     })
     try {
         const newXe = await xe.save()
@@ -99,13 +100,19 @@ router.patch('/:id',upload.single("hinhAnh"),getXe, async (req,res) => {
         res.xe.hinhAnh =  req.file ? req.file.filename : ""
     }
     if(req.body.BienSo != null){
-        res.xe.Gia = req.body.Gia       
+        res.xe.BienSo = req.body.BienSo       
     }
     if(req.body.Gia != null){
         res.xe.Gia = req.body.Gia       
     }
     if(req.body.TinhTrang != null){
         res.xe.TinhTrang = req.body.TinhTrang       
+    }
+    if(req.body.TinhNang != null){
+        res.xe.TinhNang = req.body.TinhNang       
+    }
+    if(req.body.TheChap != null){
+        res.xe.TheChap = req.body.TheChap       
     }
     try {
         const updatedxe = await res.xe.save()

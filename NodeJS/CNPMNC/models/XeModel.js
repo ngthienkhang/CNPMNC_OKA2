@@ -37,6 +37,14 @@ const xeSchema = new mongoose.Schema({
         type: String,
         require: true
     },
+    TinhNang:{
+        type: String,
+        require: true
+    },
+    TheChap:{
+        type: Number,
+        require: true
+    },
 })
 
 module.exports = mongoose.model('Xe',xeSchema)
