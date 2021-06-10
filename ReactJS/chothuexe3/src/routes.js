@@ -16,7 +16,7 @@ const routes = [
         main: () => <HomePage/>
     },
     {
-        path: '/Danhsachxe/:TenXe',
+        path: '/Danhsachxe/:id',
         exact: false,
         main: ({match}) => <DetailXe match={match}/>
     },

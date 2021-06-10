@@ -28,7 +28,7 @@ class DetailXe extends Component {
   render() {
     var { Xe, Taikhoan } = this.state;
     var { match } = this.props;
-    var TenXes = match.params.TenXe;
+    var TenXes = match.params._id;
     var Taikhoans = match.IDTaiKhoan;
     console.log(TenXes);
     console.log(Xe)
@@ -85,17 +85,20 @@ class DetailXe extends Component {
                           <tbody>
                             <tr>
                               <td>Hãng Xe</td>
-                              <td>HONDA</td>
-                            </tr>
-                            <tr>
-                              <td>Tính Năng</td>
-                              <td>Bản đồ, Bluetooth, Camera lùi, khe USB</td>
+                              <td>{Xe.TenXe}</td>
                             </tr>
                             <tr>
                               <td>Tài Sản Thế Chấp</td>
-                              <td>15tr(chuyển khoản/tiền mặt)</td>
+                              <td>{Xe.TheChap}</td>
                             </tr>
-
+                            <tr>
+                              <td>Hãng xe</td>
+                              <td>{Xe.IDHangXe}</td>
+                            </tr>
+                            <tr>
+                              <td>Chủ xe</td>
+                              <td>{Xe.IDTaiKhoan}</td>
+                            </tr>
                           </tbody>
                         </table>
                       </div>
@@ -103,7 +106,7 @@ class DetailXe extends Component {
                     <div className="decription-car">
                       <h4>MÔ TẢ XE</h4>
                       <div className="group">
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur voluptatum corporis porro eius, expedita reiciendis temporibus, minima quam dolorem animi minus aliquid voluptate officia exercitationem cupiditate quibusdam perspiciatis ipsum eos cum soluta adipisci. Velit accusantium consequatur perspiciatis, deserunt est sapiente provident impedit ea, aperiam quasi vel architecto sequi aut suscipit unde molestias tempore eos blanditiis ipsa? Culpa vitae, quasi natus unde vero ratione sed qui nam similique, minima maxime sit praesentium architecto tempore eum ducimus, quisquam ipsa! Quam sapiente ipsa praesentium sint quas, commodi ipsam suscipit repudiandae veritatis, non blanditiis quo deserunt. Laudantium cumque exercitationem numquam, fugit, expedita officiis nam dicta iste culpa, saepe sit quis tempore. Eum, exercitationem, atque sunt id asperiores voluptatibus ipsa, laudantium adipisci laboriosam suscipit alias? Exercitationem consequuntur eum, magnam sequi quos illo eveniet iure esse non. Dolores doloremque aut placeat maiores nihil sed rem, quibusdam, iste commodi repudiandae nemo accusantium. Voluptates commodi adipisci doloribus fuga esse rerum ea, dicta voluptatum quibusdam suscipit et! Incidunt tempore doloremque eveniet quis nobis esse cupiditate consequuntur architecto, quaerat voluptate cumque commodi quos, magni voluptatem ipsam a eum fugiat ipsum exercitationem eius sit veniam, possimus numquam. Similique alias explicabo, consequuntur nulla odio sed mollitia temporibus fuga omnis possimus incidunt molestias!</p>
+                        <p>{Xe.TinhNang}</p>
                       </div>
                     </div>
                   </div>

@@ -12,7 +12,7 @@ class AdminAddqlxe extends Component {
             txtGia: '',
             txtHangXe: '',
             txtTinhNang: '',
-            txtTaiSan: '',
+            txtTheChap: '',
             txtChuXe: '',
             chkbStatus: '',
             images: '',
@@ -27,13 +27,14 @@ class AdminAddqlxe extends Component {
           var data = res.data;
           this.setState({
             id: data.id,
+            txtHangXe: data.HangXe,
             txtTenXe: data.TenXe,
             txtBienSo: data.BienSo, 
             txtGia: data.Gia,
-            txtHangXe: data.HangXe,
+            txtHangXe: data.IDHangXe,
             txtTinhNang: data.TinhNang,
-            txtTaiSan: data.TaiSan,
-            txtChuXe: data.ChuXe,
+            txtTheChap: data.TheChap,
+            txtChuXe: data.IDTaiKhoan,
             chkbStatus: data.TinhTrang,
             images: data.hinhAnh,
           });
@@ -52,24 +53,28 @@ class AdminAddqlxe extends Component {
 
      onSave = (e) => {
          e.preventDefault();
-         var {id, txtTenXe, txtBienSo, txtGia, txtHangXe, txtTinhNang, txtTaiSan, txtChuXe, chkbStatus, images} = this.state;
+         var {id, txtTenXe, txtBienSo, txtGia, txtHangXe, txtTinhNang, txtTheChap, txtChuXe, chkbStatus, images} = this.state;
          var {history} = this.props;
         if(id){
           console.log('updating...')
         }else{
               callApi('Xe', 'POST', {
+                  IDTaiKhoan: txtChuXe,
+                  IDHangXe: txtHangXe,
                   TenXe: txtTenXe,
                   BienSo: txtBienSo,
                   Gia: txtGia,
                   TinhTrang: chkbStatus,
                   hinhAnh: images,
+                  TinhNang: txtTinhNang,
+                  TheChap: txtTheChap,
               }).then(res =>{
                   history.goBack();
               })
         }
      }
     render() {
-        var { txtTenXe, txtBienSo, txtGia, txtHangXe, txtTinhNang, txtTaiSan, txtChuXe, chkbStatus, images} = this.state;
+        var { txtTenXe, txtBienSo, txtGia, txtHangXe, txtTinhNang, txtTheChap, txtChuXe, chkbStatus, images} = this.state;
         return (
             <div className="main-addxe">
                   <form onSubmit={this.onSave}>
@@ -95,7 +100,7 @@ class AdminAddqlxe extends Component {
   </div>
   <div className="addxe-items">
     <h4>Tài sản thế chấp:</h4>
-    <input type="text" placeholder="Nhập tài sản thế chấp" name="txtTaiSan" value={txtTaiSan} onChange={this.onChange}/>
+    <input type="text" placeholder="Nhập tài sản thế chấp" name="txtTheChap" value={txtTheChap} onChange={this.onChange}/>
   </div>
   <div className="addxe-items">
     <h4>Chủ xe:</h4>
