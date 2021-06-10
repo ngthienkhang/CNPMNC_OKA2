@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import callApi from '../utils/apiCaller';
-import Chuxe from './Chuxe';
 
 
 class DetailXe extends Component {
@@ -18,18 +17,12 @@ class DetailXe extends Component {
         Xe: res.data
       })
     });
-    callApi('taikhoan', 'GET', null).then(res => {
-      this.setState({
-        Taikhoan: res.data
-      })
-    });
   }
 
   render() {
-    var { Xe, Taikhoan } = this.state;
+    var { Xe} = this.state;
     var { match } = this.props;
     var TenXes = match.params._id;
-    var Taikhoans = match.IDTaiKhoan;
     console.log(TenXes);
     console.log(Xe)
     return (
@@ -37,7 +30,6 @@ class DetailXe extends Component {
         {
           Xe.map((Xe, index, match) => {
             if (Xe.TenXe === TenXes) {
-
               return (
                 <div className="container">
                   <div className="sidebar">

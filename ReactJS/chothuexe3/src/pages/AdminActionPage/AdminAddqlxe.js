@@ -55,8 +55,21 @@ class AdminAddqlxe extends Component {
          e.preventDefault();
          var {id, txtTenXe, txtBienSo, txtGia, txtHangXe, txtTinhNang, txtTheChap, txtChuXe, chkbStatus, images} = this.state;
          var {history} = this.props;
-        if(id){
-          console.log('updating...')
+         console.log(this.state)
+        if(id !== ''){
+          callApi(`Xe/${id}`, 'PATCH',{
+                  IDTaiKhoan: txtChuXe,
+                  IDHangXe: txtHangXe,
+                  TenXe: txtTenXe,
+                  BienSo: txtBienSo,
+                  Gia: txtGia,
+                  TinhTrang: chkbStatus,
+                  hinhAnh: images,
+                  TinhNang: txtTinhNang,
+                  TheChap: txtTheChap,
+          }).then(res =>{
+            history.goBack();
+          })
         }else{
               callApi('Xe', 'POST', {
                   IDTaiKhoan: txtChuXe,
@@ -73,6 +86,7 @@ class AdminAddqlxe extends Component {
               })
         }
      }
+
     render() {
         var { txtTenXe, txtBienSo, txtGia, txtHangXe, txtTinhNang, txtTheChap, txtChuXe, chkbStatus, images} = this.state;
         return (
