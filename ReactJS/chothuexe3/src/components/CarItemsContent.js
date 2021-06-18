@@ -7,10 +7,10 @@ import {
 
 class CarItemsContent extends Component {
     render() {
-        var { Xe, match, index } = this.props;
+        var { Xe, index } = this.props;
         return (
           
-          <Link to={`Danhsachxe/${Xe._id}`} key={index}>
+          <Link to={`Danhsachxe/${Xe.TenXe}`} key={index}>
             <li>
             <img src={"http://localhost:3500/images/"+Xe.hinhAnh} alt="" style={{width: '100%'}} />
             <div className="car-card-details-wrapper">

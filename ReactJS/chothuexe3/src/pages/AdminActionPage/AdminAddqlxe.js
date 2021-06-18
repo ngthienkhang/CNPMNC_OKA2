@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactImageUploadComponent from 'react-images-upload';
 import { Link } from 'react-router-dom';
 import callApi from '../../utils/apiCaller';
 
@@ -15,8 +16,9 @@ class AdminAddqlxe extends Component {
             txtTheChap: '',
             txtChuXe: '',
             chkbStatus: '',
-            images: '',
+            pictures: '',
         }
+        this.onDrop = this.onDrop.bind(this);
     }
 
     componentDidMount(){
@@ -36,11 +38,18 @@ class AdminAddqlxe extends Component {
             txtTheChap: data.TheChap,
             txtChuXe: data.IDTaiKhoan,
             chkbStatus: data.TinhTrang,
-            images: data.hinhAnh,
+            pictures: data.hinhAnh,
           });
         })
       }
     }
+
+    onDrop(picture) {
+      this.setState({
+          pictures: this.state.pictures.concat(picture),
+      });
+      console.log(this.state.pictures.concat(picture))
+  }
 
     onChange = (e) => {
         var target = e.target;
@@ -53,7 +62,7 @@ class AdminAddqlxe extends Component {
 
      onSave = (e) => {
          e.preventDefault();
-         var {id, txtTenXe, txtBienSo, txtGia, txtHangXe, txtTinhNang, txtTheChap, txtChuXe, chkbStatus, images} = this.state;
+         var {id, txtTenXe, txtBienSo, txtGia, txtHangXe, txtTinhNang, txtTheChap, txtChuXe, chkbStatus, pictures} = this.state;
          var {history} = this.props;
          console.log(this.state)
         if(id !== ''){
@@ -64,7 +73,7 @@ class AdminAddqlxe extends Component {
                   BienSo: txtBienSo,
                   Gia: txtGia,
                   TinhTrang: chkbStatus,
-                  hinhAnh: images,
+                  hinhAnh: pictures,
                   TinhNang: txtTinhNang,
                   TheChap: txtTheChap,
           }).then(res =>{
@@ -78,7 +87,7 @@ class AdminAddqlxe extends Component {
                   BienSo: txtBienSo,
                   Gia: txtGia,
                   TinhTrang: chkbStatus,
-                  hinhAnh: images,
+                  hinhAnh: pictures,
                   TinhNang: txtTinhNang,
                   TheChap: txtTheChap,
               }).then(res =>{
@@ -88,7 +97,7 @@ class AdminAddqlxe extends Component {
      }
 
     render() {
-        var { txtTenXe, txtBienSo, txtGia, txtHangXe, txtTinhNang, txtTheChap, txtChuXe, chkbStatus, images} = this.state;
+        var { txtTenXe, txtBienSo, txtGia, txtHangXe, txtTinhNang, txtTheChap, txtChuXe, chkbStatus, pictures} = this.state;
         return (
             <div className="main-addxe">
                   <form onSubmit={this.onSave}>
@@ -123,7 +132,13 @@ class AdminAddqlxe extends Component {
   <div className="addxe-items">
     <h4>Hình ảnh:</h4>
     <form action>
-      <input type="file" name="images" value={images} onChange={this.onChange}/>
+    <ReactImageUploadComponent
+                withIcon={true}
+                buttonText='Choose images'
+                onChange={this.onDrop}
+                imgExtension={['.jpg', '.gif', '.png', '.gif']}
+                maxFileSize={5242880}
+            />
     </form>
   </div>
   <div className="addxe-items-checkbox">

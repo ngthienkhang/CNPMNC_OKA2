@@ -7,7 +7,6 @@ class DetailXe extends Component {
     super(props);
     this.state = {
       Xe: [],
-      Taikhoan: [],
     };
   }
 
@@ -22,13 +21,13 @@ class DetailXe extends Component {
   render() {
     var { Xe} = this.state;
     var { match } = this.props;
-    var TenXes = match.params._id;
+    var TenXes = match.params.TenXe;
     console.log(TenXes);
     console.log(Xe)
     return (
       <div>
         {
-          Xe.map((Xe, index, match) => {
+          Xe.map((Xe) => {
             if (Xe.TenXe === TenXes) {
               return (
                 <div className="container">
