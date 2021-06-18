@@ -28,7 +28,7 @@ class AdminAddqlxe extends Component {
         callApi(`Xe/${id}`, 'GET', null).then(res =>{
           var data = res.data;
           this.setState({
-            id: data.id,
+            id: data._id,
             txtHangXe: data.HangXe,
             txtTenXe: data.TenXe,
             txtBienSo: data.BienSo, 
@@ -56,7 +56,7 @@ class AdminAddqlxe extends Component {
         var name = target.name;
         var value = target.type === 'checkbox' ? target.checked : target.value;
         this.setState({
-            [name]: value
+            [name]: value,
         });
      }
 
@@ -64,7 +64,6 @@ class AdminAddqlxe extends Component {
          e.preventDefault();
          var {id, txtTenXe, txtBienSo, txtGia, txtHangXe, txtTinhNang, txtTheChap, txtChuXe, chkbStatus, pictures} = this.state;
          var {history} = this.props;
-         console.log(this.state)
         if(id !== ''){
           callApi(`Xe/${id}`, 'PATCH',{
                   IDTaiKhoan: txtChuXe,
@@ -78,6 +77,7 @@ class AdminAddqlxe extends Component {
                   TheChap: txtTheChap,
           }).then(res =>{
             history.goBack();
+            console.log(res.data.hinhAnh)
           })
         }else{
               callApi('Xe', 'POST', {
@@ -91,6 +91,7 @@ class AdminAddqlxe extends Component {
                   TinhNang: txtTinhNang,
                   TheChap: txtTheChap,
               }).then(res =>{
+                  console.log(res.data)
                   history.goBack();
               })
         }
@@ -140,10 +141,6 @@ class AdminAddqlxe extends Component {
                 maxFileSize={5242880}
             />
     </form>
-  </div>
-  <div className="addxe-items-checkbox">
-    <h4>Tình trạng:</h4>
-      <input type="checkbox" style={{width: 'auto'}} name="chkbStatus" value={chkbStatus} onChange={this.onChange}/>Còn cho thuê
   </div>
   <Link to="/Admin" className="btn btn-danger back-car">Quay lại</Link>
   <button className="btn btn-danger add-car">Lưu</button>

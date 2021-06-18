@@ -1,6 +1,25 @@
 import React, { Component } from 'react';
 
 class Dk extends Component {
+
+  state = {
+    tenDangNhap: "",
+    matKhau: "",
+    avatar: "",
+    email: "",
+    sdt: "",
+    cmnd: "",
+    maQuyen: ""
+  }
+
+  handleChange = event => {
+    this.setState({
+      [event.target.name]: event.target.value
+    });
+  }
+
+  
+
     render() {
         return (
             <div>

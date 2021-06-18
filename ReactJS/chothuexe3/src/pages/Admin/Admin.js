@@ -61,36 +61,6 @@ class Admin extends Component {
               <h4>Quản lý xe</h4>
             </a>
           </div>
-          <div className="filter-options-title">
-            <a href>
-              <h4>Tính năng nổi bật</h4>
-            </a>
-          </div>
-          <div className="filter-options-title">
-            <a href>
-              <h4>Lợi ích thuê xe tự lái</h4>
-            </a>
-          </div>
-          <div className="filter-options-title">
-            <a href>
-              <h4>Lợi ích chủ xe</h4>
-            </a>
-          </div>
-          <div className="filter-options-title">
-            <a href>
-              <h4>Cách đăng kí xe cho thuê</h4>
-            </a>
-          </div>
-          <div className="filter-options-title">
-            <a href>
-              <h4>Quy trình thuê xe tự lái</h4>
-            </a>
-          </div>
-          <div className="filter-options-title">
-            <a href>
-              <h4>Quy trình cho thuê xe tự lái</h4>
-            </a>
-          </div>
         </div>
       </div>
     </div>
